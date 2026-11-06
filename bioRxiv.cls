@@ -127,6 +127,12 @@
 \normallineskip     1pt
 \def\baselinestretch{1.025}
 
+%% 1.5 line spacing in submit mode (captions and footnotes stay single-spaced)
+\if@submit
+  \RequirePackage{setspace}
+  \onehalfspacing
+\fi
+
 \marginparsep      10pt
 \marginparwidth    20pt
 \marginparpush     25pt
@@ -350,6 +356,15 @@
   \setcounter{footnote}{0}\let\maketitle\relax\let\@maketitle\relax
   \gdef\@thanks{}\gdef\@author{}\gdef\@title{}\let\thanks\relax
 }
+
+%% Title + abstract block: spans both columns in bioRxiv style,
+%% typeset in the normal single column in submit style
+\newcommand{\titleblock}[1]{%
+\if@submit
+  #1\par
+\else
+  \twocolumn[#1]%
+\fi}
 
 \if@submit
   \def\@maketitle{\newpage

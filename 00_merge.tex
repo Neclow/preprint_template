@@ -1,6 +1,6 @@
 %% select between bioRxiv style or submission style by commenting either line
-\documentclass[times, nohelvet]{bioRxiv}
-% \documentclass[submit]{bioRxiv}
+% \documentclass[times, nohelvet]{bioRxiv} % bioRxiv style: two columns, no line numbers
+\documentclass[submit]{bioRxiv} % submission style: one column, line numbers
 %\renewcommand\familydefault{\sfdefault}
 \usepackage{csquotes}
 \usepackage{dsfont}
@@ -20,8 +20,8 @@
 \setlength{\parskip}{1em}
 % Toggle between draft mode & final copy: 
 \newtoggle{draft}
-% \toggletrue{draft} % draft mode
-\togglefalse{draft} % final-copy mode <=== comment this line if you want draft mode
+\toggletrue{draft} % draft mode <=== comment this line if you want final-copy mode
+% \togglefalse{draft} % final-copy mode
 
 \usepackage[backend=biber, style=nature, sorting=none, intitle=true]{biblatex}
 % \DeclareLanguageMapping{english}{american-apa}
